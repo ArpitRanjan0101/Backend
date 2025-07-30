@@ -26,11 +26,11 @@ console.log("hello i am first");
 // code will be executed in the order because we have imported second.js in first.js, so the code of second.js will be executed first and then the code of first.js will be executed.
 
 
-const sum = require('./second'); // importing the sum function from second.js file..
+const{ sum, sub} = require('./second'); // importing the sum function from second.js file..as well as sub function using object concept
 
 
 // ( function(){
-//     console.log("heloo ji i am second"); 
+//     console.log("hello ji i am second"); 
 
 //     function sum(a,b){
 //         console.log(a+b);
