@@ -1,6 +1,6 @@
- const sum = require ("./current/sum.js");
- const sub = require ("./current/sub.js");
- const mul = require ("./current/mul.js");
+ const sum = require ("./current/sum");
+ const sub = require ("./current/sub");
+ const mul = require ("./current/mul");
 
  sum(7,8);
  sub(10,5);
