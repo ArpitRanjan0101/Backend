@@ -3,4 +3,4 @@ function sum (a,b){
 }
 export default sum;
 
-// module.exports = sum;
+// module.exports = sum; // This is the CommonJS way of exporting functions in Node.js

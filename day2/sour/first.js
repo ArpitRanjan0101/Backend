@@ -3,6 +3,10 @@
 
 
 import sum from "./second.js";
+// import
+// import 
+//import
+// asynchronous way me execute hoga ,mtlb agar first wale me delay hua too next wala execute ho jaega , wait nhi krega execution keliye ..
 
 
 
