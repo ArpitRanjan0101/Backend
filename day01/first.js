@@ -18,7 +18,7 @@
 
 
 
-// sum(3,4);   // will not execute beacause , firstly we have to import the function to be executed .. , sum function private ki trah aya hoga phele jo ki execute nhi hoga 
+// sum(3,4);   // will not execute beacause , firstly we have to import the function to be executed .. , sum function private ki trah aya hoga phele jo ki execute nhi hoga   
 
 
 console.log("hello i am first");
