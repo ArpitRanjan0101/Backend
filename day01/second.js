@@ -21,7 +21,7 @@ function sub(a,b){
 }
 sub(7,4); // this will execute the sub function with 3 and 4 as arguments
  
-console.log(module.exports); // here when we will print the module.exports it will show us the object with sum and sub function as properties, which means we can use these functions in other files by importing them using require('./second').,,, but we if we print the module exports before any declaration of module export then it will show the only actual thing like it is an empty object in terminal with sign {} . 
+console.log(module.exports); //   , here module.export is simply empty objects,, here when we will print the module.exports it will show us the object with sum and sub function as properties, which means we can use these functions in other files by importing them using require('./second').,,, but we if we print the module exports before any declaration of module export then it will show the only actual thing like it is an empty object in terminal with sign {} .  
 
 
 // module.exports = {sum , sub};   // exporting the sum and sub function so that it can be used in other files.
