@@ -3,5 +3,5 @@
 
 import sum from './second.js';
 
-sum(5, 10); // second.js file ko humne call kiya yaha pe by using import sum ....
+sum(7, 10); // second.js file ko humne call kiya yaha pe  import sum krne ke baad , humne call kiya hai sum ko ..  
 console.log("hello arpit this side here ");
