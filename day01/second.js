@@ -8,7 +8,6 @@
 // module.exports = sum; // exporting the sum function so that it can be used in other files.   
 
 
-
 // if we want to export more than two functions then we can use the concept of the object
 
 function sum(a,b){
