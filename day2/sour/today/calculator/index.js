@@ -4,4 +4,4 @@ const sum = require("./sum");
  const sub = require("./sub");
  const mul = require("./mul");
  
- Module. exports = {sum, sub, mul}; // This is the CommonJS way of exporting functions in Node.js using the object shorthand property..
+ module. exports = {sum, sub, mul}; // This is the CommonJS way of exporting functions in Node.js using the object shorthand property..
