@@ -1,6 +1,7 @@
  const sum = require("./current/sum");
  const sub = require("./current/sub");
- const mul = require("./current/mul");
+ const mul = require("./currrent/mul");
+ 
 
  // here to use the commonjs modules we have to use the commonjs in package.json file so that node will understand that we are using commonjs modules..
 
