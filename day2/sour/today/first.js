@@ -14,7 +14,7 @@ const {sum , sub ,mul} = require("./calculator/index");
 
 
  sum(7,8);
- sub(10,5);
+   sub(10,5);
  mul(3,4); 
 
  // sum 
