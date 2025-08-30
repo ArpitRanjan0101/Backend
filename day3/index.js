@@ -1,6 +1,6 @@
 setTimeout(() => {
     console.log("Hello after 2 seconds");
-}, 200);      
+}, 10);      // here time is set to 10 milliseconds after which the callback function will be executed 
 
 // seTimeout yaha pe bass ek funtion calll hai , uski implementation LIBUV ke aNDAR LIKHE  hue hai jo ki C language me likha hua hai
 
