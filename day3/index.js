@@ -30,7 +30,7 @@ function sum(a, b) {
 
 setTimeout(() =>{  
     console.log("Hello after 2 seconds");
-},3000)
+},6000)
 
 // settimeout hume call back function deta hai jo ki event loop ke through call hota hai  , yaha pe hello after 2 seconds 3 second ke baad print hoga
 
