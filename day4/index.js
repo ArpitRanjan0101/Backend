@@ -1,4 +1,5 @@
-const http = require('http');
+const http = require('http'); // http module ko import kar rahe hai
+// http module ke through hum server create kar sakte hai
 
 const server = http.createServer((req ,res)=>{
     res.end("Hello jii");   // jo bhi server pe visit krega usse hello ji bolkar greeting hoga
