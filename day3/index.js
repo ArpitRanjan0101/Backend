@@ -12,6 +12,13 @@
 // // ye callback function event loop ke through call hota hai
 
 
+// yaha pe javascript synchronous hai , iska matlab ye hai ki ye line by line execute hota hai
+// jab tak ek line execute nahi hoti tab tak dusri line execute nahi hoti
+// jab hum setTimeout call karte hai to wo ek timer start kar deta hai aur jab wo timer complete ho jata hai to wo callback function ko call kar deta hai
+// ye callback function event loop ke through call hota hai
+
+// but settimeout ko js handle nhi kar pta hai , isilye woo LIBUV ko de deta hai tabki wo esse handle kre , agar o LIBUV ko nhi dega to code block ho jaega  aur aage code execute nhi hoga 
+
 let a = 10;
 let b = "Hello myself arpit ranjan";
 
@@ -22,11 +29,10 @@ function sum(a, b) {
 }
 
 setTimeout(() =>{  
-       
     console.log("Hello after 2 seconds");
 },3000)
 
-// settimeout hume call back function deta hai jo ki event loop ke through call hota hai
+// settimeout hume call back function deta hai jo ki event loop ke through call hota hai  , yaha pe hello after 2 seconds 3 second ke baad print hoga
 
 console.log(a);
-console.log(sum(10, 20));   
+console.log(sum(10, 20));    
