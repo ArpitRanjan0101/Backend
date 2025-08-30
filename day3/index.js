@@ -25,6 +25,18 @@ const fs = require('fs'); // file system module
 
 // fs.readFile('data.json', 'utf-8', (err, data) => {   // yaha pe hum data.json file read kar rahe hai  
 
+
+
+fs.readFile("./data.json","utf-8",(err,res)=>{
+    console.log(res);
+})
+
+
+// readfile ek asynchronous function hai , iska matlab ye hai ki ye line by line execute nahi hota
+// jab tak ye file read nahi kar leta tab tak aage ka code execute hota raheta hai 
+// isilye hum callback function pass karte hai jo ki tab call hota hai jab file read ho jati hai     
+
+
 let a = 10;
 let b = "Hello myself arpit ranjan";
 
