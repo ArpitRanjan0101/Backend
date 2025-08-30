@@ -19,6 +19,12 @@
 
 // but settimeout ko js handle nhi kar pta hai , isilye woo LIBUV ko de deta hai tabki wo esse handle kre , agar o LIBUV ko nhi dega to code block ho jaega  aur aage code execute nhi hoga 
 
+
+const fs = require('fs'); // file system module
+// fs module ke through hum file read and write kar sakte hai
+
+// fs.readFile('data.json', 'utf-8', (err, data) => {   // yaha pe hum data.json file read kar rahe hai  
+
 let a = 10;
 let b = "Hello myself arpit ranjan";
 
