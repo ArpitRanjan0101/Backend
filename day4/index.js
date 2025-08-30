@@ -2,9 +2,26 @@ const http = require('http'); // http module ko import kar rahe hai
 // http module ke through hum server create kar sakte hai
 
 const server = http.createServer((req ,res)=>{
-    res.end("Hello jii");   // jo bhi server pe visit krega usse hello ji bolkar greeting hoga
+    // res.end("Hello jii");   // jo bhi server pe visit krega usse hello ji bolkar greeting hoga
+
+if(req.url==="/"){
+    res.end("Hello ji, welcome to our home page");
+}
+else if(req.url==="/contact"){
+    res.end("Hello ji, welcome to our contact page");
+}
+else if(req.url==="/about"){
+    res.end("Hello ji, welcome to our about page");
+}
+else {
+    res.end("404 page not found");
+}
+
 
 });
+
+
+// above snippet code is for creating a server , which show the routing 
 
 
 // server create kre ke baad sunega bhi too woo port number 4000 pe sunega
