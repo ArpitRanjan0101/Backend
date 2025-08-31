@@ -17,10 +17,6 @@ else {
     res.end("404 page not found");
 }
 
-
-});
-
-
 // above snippet code is for creating a server , which show the routing 
 
 
@@ -32,3 +28,4 @@ else {
 server.listen(4000,()=>{
     console.log("Server is running on port 4000");
 })
+
