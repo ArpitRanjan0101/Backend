@@ -16,6 +16,7 @@ else if(req.url==="/about"){
 else {
     res.end("404 page not found");
 }
+}); // <-- Closing bracket for createServer callback
 
 // above snippet code is for creating a server , which show the routing 
 
