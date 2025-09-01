@@ -21,9 +21,6 @@ const app = express();  // Sever create kiya humne yaha pe , using the express l
 // yaha pe humne ek callback function pass kiya hai , jisme req and res hai , req means request and res means response
 // jab bhi koi request aayegi to woo is function ko call karega , aur res.json ke through response dega in json format
 
-app.use("/",(req,res) =>{
-    res.send(" hello everyone this is the landing page, this side arpit ranjan");
-})
 
 app.use("/about",(req,res) =>{
     res.send({name : "arpit", age : 12, city : "california"});
@@ -35,9 +32,13 @@ app.use("/contact",(req,res) =>{
 
 
 app.use("/detail",(req,res) =>{
-    res.send(" hello everyone , this side arpit ranjan");
+    res.send(" hello everyone , this is detail page");
+
 })
 
+app.use("/",(req,res) =>{
+    res.send(" hello everyone this is the landing page, this side arpit ranjan");
+})
 
 // yaha pe humne 2 alag alag route banaye hai , about and contact , jab bhi koi request aayegi to woo is function ko call karega , aur res.send ke through response dega
 
