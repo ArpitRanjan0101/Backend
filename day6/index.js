@@ -40,6 +40,10 @@ app.use("/",(req,res) =>{
     res.send(" hello everyone this is the landing page, this side arpit ranjan");
 })
 
+// yaha pe humne slash route ko niche likh diya hai so that other routes can work properly , kyu ki agar humne slash route ko upar likha hota to woo sabse pehle match karta to baaki routes ko check hi nhi karta , to isliye humne slash route ko niche likh diya hai
+
+// mtlb yaha pe convection javascript ke hi follow krege , upar se start krege aur niche tak exceute krege 
+
 // yaha pe humne 2 alag alag route banaye hai , about and contact , jab bhi koi request aayegi to woo is function ko call karega , aur res.send ke through response dega
 
 // agar hum chahte hai ki jab bhi koi about ke route pe request bheje to woo about ka hi response de , aur contact ke route pe request bheje to woo contact ka hi response de , to hum app.use ke andar pehla argument me route ka naam de denge , jese upar diye hue code me likha hua hai
