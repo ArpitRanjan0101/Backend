@@ -1,7 +1,7 @@
 const express = require('express');
 
 
-const app = express();  // Sever create kiya humne yaha pe , using the express likh kar aur uss app bhi bolte hai  too , usse humne const app me store kar liya 
+const app = express();  // Sever create kiya humne yaha pe , using the express likh kar aur uss app bhi bolte hai  too , usse humne const app me store kar liya , yeah ek actually instant hai , jo btatata hai ki humne server create kiya hai
 
 app.use((req,res) =>{
     res.send("Hello ji, welcome to our home page");
@@ -9,7 +9,7 @@ app.use((req,res) =>{
 // jab bhi koi request aayegi to woo is function ko call karega , aur res.send ke through response dega
 
 
-
+ 
 
 app.listen(4000, () =>{
     console.log("listening at port 4000");
