@@ -15,7 +15,7 @@ const app = express();  // Sever create kiya humne yaha pe , using the express l
 // we can also send the data in json format niche diye hue code me likha hua hai , just check it out
 
 app.use((req,res) =>{
-    res.send({name : "Nexus", age : 22, city : "Bangalore"});
+    res.send({name : "Nexus", age : 29, city : "Bangalore"});
 }) 
 
 // yaha pe humne ek callback function pass kiya hai , jisme req and res hai , req means request and res means response
