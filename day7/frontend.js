@@ -6,7 +6,7 @@
 fetch("https://fktuygjbd.com")
 
 
-below is the post method to send the data to the server
+//below is the post method to send the data to the server
 // means with help of the given below function we show that , it is the way to write down the post method
 // post method is used to send the data to the server
 // post method is used to create the data on the server
