@@ -8,12 +8,12 @@ const app = express();
 // })
 
 
-// we use here GET METHOD to fetch the data from the server
+// we use here GET METHOD to fetch the data from the server , see below
 
 
 app.get("/user",(req , res)=>{
 
-    res.send("hello guys , Heer here this side");
+    res.send("hello guys , Heer here this side"); // we can also print json data here using get method
 })
 
 
