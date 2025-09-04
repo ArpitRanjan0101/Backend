@@ -10,7 +10,7 @@ fetch("https://fktuygjbd.com")
 // means with help of the given below function we show that , it is the way to write down the post method
 // post method is used to send the data to the server
 // post method is used to create the data on the server
-// post method is used to update the data on the server
+// post method is used to update the data on the server 
 // post method is used to delete the data on the server
 // post method is used to fetch the data from the server
 
