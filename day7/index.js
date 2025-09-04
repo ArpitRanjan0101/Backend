@@ -26,8 +26,8 @@ app.get("/user",(req , res)=>{
 // post method is used to fetch the data from the server
 
 app.post("/user",(req , res)=>{
-    console.log("data saved successfully");
-    res.send("Data saved successfully"); // we can also print json data here using get method
+    console.log("data saved successfully"); // yeah data ko store krne keliye console likha hua hai
+    res.send("Data saved successfully"); //  and store krne ke baad yeah response bhi bhej rha hai
 })
 
 
