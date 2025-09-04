@@ -37,28 +37,28 @@ const response = await fetch("https://fktuygjbd.com",{
 
 // Patch method
 
-// const response3 = await fetch("https://fktuygjbd.com",{
-//     method : "PATCH",
-//     headers : {
-//         "Content-Type" : "application/json"
-//     },
-//     body : JSON.stringify({
-//         name : "Heer",
-//         age : 21
-//     })
-// });
+const response3 = await fetch("https://fktuygjbd.com",{
+    method : "PATCH",
+    headers : {
+        "Content-Type" : "application/json"
+    },
+    body : JSON.stringify({
+        name : "Heer",
+        age : 21
+    })
+});
 
 
 // Put method
 
-// const response4 = await fetch("https://fktuygjbd.com",{
-//     method : "Put",
-//     headers : {
-//         "Content-Type" : "application/json"
-//     },
-//     body : JSON.stringify({
-//         name : "Heer",
-//         age : 21
-//     })
-// });
+const response4 = await fetch("https://fktuygjbd.com",{
+    method : "Put",
+    headers : {
+        "Content-Type" : "application/json"
+    },
+    body : JSON.stringify({
+        name : "Heer",
+        age : 21
+    })
+});
  
