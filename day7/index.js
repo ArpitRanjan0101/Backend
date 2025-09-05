@@ -4,7 +4,7 @@ const app = express();
 
 // app.use("/user",(req , res)=>{
 
-//     res.send("hello guys , Heer here this side");
+//     res.send({name:"arpit"})
 // })
 
 
@@ -14,7 +14,7 @@ const app = express();
 app.get("/user",(req , res)=>{
 
     // console.log(req);   // yah pe bhut sare request jate hai request ko print krne pe
-    res.send("hello guys , Heer here this side"); // we can also print json data here using get method
+    res.send({name:"arpit"}); // we can also print json data here using get method
 })
 
 
