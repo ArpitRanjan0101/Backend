@@ -4,7 +4,7 @@ const app = express();
 
 // app.use("/user",(req , res)=>{
 
-//     res.send({name:"arpit"})
+//     res.send({name:"arpit" , age:18}); // we can also print json data here using get method
 // })
 
 
@@ -14,7 +14,7 @@ app.use(express.json()); // ye line humne isliye likhi hai , jisse hum data ko r
 app.get("/user",(req , res)=>{
 
     // console.log(req);   // yah pe bhut sare request jate hai request ko print krne pe
-    res.send({name:"arpit"}); // we can also print json data here using get method
+    res.send({name:"Heer", age:21}); // we can also print json data here using get method
 })
 
 
@@ -27,7 +27,7 @@ app.get("/user",(req , res)=>{
 
 app.post("/user",(req , res)=>{
 
-      console.log(req.body);  // getting the data from the frontend ,as data is printed in the console , but in the terminal it is showing undefined , but to receive the data as shown in the postman console , we will use PARSING 
+    //   console.log(req.body);  // getting the data from the frontend ,as data is printed in the console , but in the terminal it is showing undefined , but to receive the data as shown in the postman console , we will use PARSING 
 
 
       // DATA ko print krne keliye hum parsing krte hai , jisse hum data ko read kr ske
@@ -38,7 +38,6 @@ app.post("/user",(req , res)=>{
     console.log("data saved successfully"); // yeah data ko store krne keliye console likha hua hai
     res.send("Data saved successfully"); //  and store krne ke baad yeah response bhi bhej rha hai
 })
-
 
 app.listen(4000 ,()=>{
     console.log("listening at port 4000");
