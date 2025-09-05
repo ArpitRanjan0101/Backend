@@ -10,7 +10,7 @@ const app = express();
 
 // we use here GET METHOD to fetch the data from the server , see below
 
-
+app.use(express.json()); // ye line humne isliye likhi hai , jisse hum data ko read kr ske , ye parsing krta hai , without this line we cant read the data from the frontend
 app.get("/user",(req , res)=>{
 
     // console.log(req);   // yah pe bhut sare request jate hai request ko print krne pe
@@ -28,15 +28,14 @@ app.get("/user",(req , res)=>{
 app.post("/user",(req , res)=>{
 
       console.log(req.body);  // getting the data from the frontend ,as data is printed in the console , but in the terminal it is showing undefined , but to receive the data as shown in the postman console , we will use PARSING 
-      
+
 
       // DATA ko print krne keliye hum parsing krte hai , jisse hum data ko read kr ske
       // parsing krne keliye hum express.json() use krte hai , jisse hum data ko read kr ske
       // parsing krne keliye hum express.urlencoded() use krte hai , jisse hum data ko read kr ske
       // parsing krne keliye hum body-parser use krte hai , jisse hum data ko read kr ske
 
-
-    // console.log("data saved successfully"); // yeah data ko store krne keliye console likha hua hai
+    console.log("data saved successfully"); // yeah data ko store krne keliye console likha hua hai
     res.send("Data saved successfully"); //  and store krne ke baad yeah response bhi bhej rha hai
 })
 
