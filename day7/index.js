@@ -16,8 +16,6 @@ app.get("/user",(req , res)=>{
     // console.log(req);   // yah pe bhut sare request jate hai request ko print krne pe
     res.send({name:"Heer", age:21}); // we can also print json data here using get method
 })
-
-
 // below is the post method to send the data to the server
 // post method is used to send the data to the server
 // post method is used to create the data on the server
