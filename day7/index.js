@@ -18,7 +18,7 @@ app.get("/user",(req , res)=>{
 })
 
 
-// below is the post mentod to send the data to the server
+// below is the post method to send the data to the server
 // post method is used to send the data to the server
 // post method is used to create the data on the server
 // post method is used to update the data on the server
@@ -26,7 +26,10 @@ app.get("/user",(req , res)=>{
 // post method is used to fetch the data from the server
 
 app.post("/user",(req , res)=>{
-    console.log("data saved successfully"); // yeah data ko store krne keliye console likha hua hai
+
+      console.log(req.body);
+
+    // console.log("data saved successfully"); // yeah data ko store krne keliye console likha hua hai
     res.send("Data saved successfully"); //  and store krne ke baad yeah response bhi bhej rha hai
 })
 
