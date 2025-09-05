@@ -33,7 +33,7 @@ app.post("/user",(req , res)=>{
       // parsing krne keliye hum express.urlencoded() use krte hai , jisse hum data ko read kr ske
       // parsing krne keliye hum body-parser use krte hai , jisse hum data ko read kr ske
 
-    console.log("data saved successfully"); // yeah data ko store krne keliye console likha hua hai
+    // console.log("data saved successfully"); // yeah data ko store krne keliye console likha hua hai
     res.send("Data saved successfully"); //  and store krne ke baad yeah response bhi bhej rha hai
 })
 
