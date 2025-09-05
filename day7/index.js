@@ -27,7 +27,7 @@ app.get("/user",(req , res)=>{
 
 app.post("/user",(req , res)=>{
 
-      console.log(req.body);  // getting the data from the frontend ,as data is printed in the console , but in the terminal it is showing undefined
+      console.log(req.body);  // getting the data from the frontend ,as data is printed in the console , but in the terminal it is showing undefined , we will in details 
 
     // console.log("data saved successfully"); // yeah data ko store krne keliye console likha hua hai
     res.send("Data saved successfully"); //  and store krne ke baad yeah response bhi bhej rha hai
