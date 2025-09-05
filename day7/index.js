@@ -27,7 +27,14 @@ app.get("/user",(req , res)=>{
 
 app.post("/user",(req , res)=>{
 
-      console.log(req.body);  // getting the data from the frontend ,as data is printed in the console , but in the terminal it is showing undefined , we will in details 
+      console.log(req.body);  // getting the data from the frontend ,as data is printed in the console , but in the terminal it is showing undefined , but to receive the data as shown in the postman console , we will use PARSING 
+      
+
+      // DATA ko print krne keliye hum parsing krte hai , jisse hum data ko read kr ske
+      // parsing krne keliye hum express.json() use krte hai , jisse hum data ko read kr ske
+      // parsing krne keliye hum express.urlencoded() use krte hai , jisse hum data ko read kr ske
+      // parsing krne keliye hum body-parser use krte hai , jisse hum data ko read kr ske
+
 
     // console.log("data saved successfully"); // yeah data ko store krne keliye console likha hua hai
     res.send("Data saved successfully"); //  and store krne ke baad yeah response bhi bhej rha hai
