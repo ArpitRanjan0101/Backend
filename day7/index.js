@@ -70,6 +70,15 @@ app.get("/book",(req ,res) =>{
     res.send(BookStore); // we can also print json data here using get method , as if request will appear on this url , then it will show the data of the books which is present in the array of objects through get method
 })
 
+app.get("/book/:id",(req ,res) =>{
+
+    const id = parseInt(req.params.id); // ye line humne isliye likhi hai , jisse hum id ko read kr ske , as we are using here dynamic routing
+     const book = BookStore.find(info=> info.id === id); // with this line of code we can find the details of book with the particular id
+
+    //  console.log(req.params); // ye line humne isliye likhi hai , jisse hum id ko read kr ske , as we are using here dynamic routing
+    res.send(book); // we can also print json data here using get method , as if request will appear on this url with particular id , then it will show the data of the book which is present in the array of objects through get method
+    // ");
+}) // ye line humne isliye likhi hai , jisse hum id ko read kr ske , as we are using here dynamic routing
 
 
 
