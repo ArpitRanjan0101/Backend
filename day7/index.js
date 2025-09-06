@@ -66,6 +66,8 @@ const BookStore =[
     {id:9,name:"Atomic Habits",author:"James Clear"}
 ]
 
+app.use(express.json()); // ye line humne isliye likhi hai , jisse hum data ko read kr ske , ye parsing krta hai , without this line we cant read the data from the frontend
+
 app.get("/book",(req ,res) =>{
     res.send(BookStore); // we can also print json data here using get method , as if request will appear on this url , then it will show the data of the books which is present in the array of objects through get method
 })
@@ -82,7 +84,11 @@ app.get("/book/:id",(req ,res) =>{
     // ");
 }) // ye line humne isliye likhi hai , jisse hum id ko read kr ske , as we are using here dynamic routing
 
+app.post("/book",(req,res)=>{
 
+    BookStore.push(req.body);
+    res.send("Data saved successfully"); 
+})
 
 
 app.listen(3000,()=>{
