@@ -73,6 +73,9 @@ app.get("/book",(req ,res) =>{
 app.get("/book/:id",(req ,res) =>{
 
     const id = parseInt(req.params.id); // ye line humne isliye likhi hai , jisse hum id ko read kr ske , as we are using here dynamic routing
+
+    // console.log(typeof req.params.id); // yeah string type ka hai , too usse number me convert krne keliye hum parseInt use krte hai
+
      const book = BookStore.find(info=> info.id === id); // with this line of code we can find the details of book with the particular id
 
     //  console.log(req.params); // ye line humne isliye likhi hai , jisse hum id ko read kr ske , as we are using here dynamic routing
