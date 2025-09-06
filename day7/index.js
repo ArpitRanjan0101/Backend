@@ -57,7 +57,13 @@ const app = express();
 const BookStore =[
     {id:1,name:"Harry Potter",author:"DevFlux"},
     {id:2,name:"Friends",author:"J.K.Rowling"},
-    {id:3,name:"The Alchemist",author:"Paulo Coelho"}
+    {id:3,name:"The Alchemist",author:"Paulo Coelho"},
+    {id:4,name:"Wings of Fire",author:"A.P.J Abdul Kalam"},
+    {id:5,name:"Rich Dad Poor Dad",author:"Robert Kiyosaki"},
+    {id:6,name:"Think and Grow Rich",author:"Napoleon Hill"},
+    {id:7,name:"The Power of Now",author:"Eckhart Tolle"},
+    {id:8,name:"The Subtle Art of Not Giving a F*ck",author:"Mark Manson"},
+    {id:9,name:"Atomic Habits",author:"James Clear"}
 ]
 
 app.get("/book",(req ,res) =>{
