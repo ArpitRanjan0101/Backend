@@ -13,27 +13,27 @@
 // app.use(express.json()); // ye line humne isliye likhi hai , jisse hum data ko read kr ske , ye parsing krta hai , without this line we cant read the data from the frontend
 // app.get("/user",(req , res)=>{
 
-//     // console.log(req);   // yah pe bhut sare request jate hai request ko print krne pe
+     // console.log(req);   // yah pe bhut sare request jate hai request ko print krne pe
 //     res.send({name:"Heer", age:21}); // we can also print json data here using get method
 // })
-// // below is the post method to send the data to the server
-// // post method is used to send the data to the server
-// // post method is used to create the data on the server
-// // post method is used to update the data on the server
-// // post method is used to delete the data on the server
-// // post method is used to fetch the data from the server
+ // below is the post method to send the data to the server
+ // post method is used to send the data to the server
+ // post method is used to create the data on the server
+ // post method is used to update the data on the server
+ // post method is used to delete the data on the server
+ // post method is used to fetch the data from the server
 
 // app.post("/user",(req , res)=>{
 
-//     //   console.log(req.body);  // getting the data from the frontend ,as data is printed in the console , but in the terminal it is showing undefined , but to receive the data as shown in the postman console , we will use PARSING 
+    //   console.log(req.body);  // getting the data from the frontend ,as data is printed in the console , but in the terminal it is showing undefined , but to receive the data as shown in the postman console , we will use PARSING 
 
 
-//       // DATA ko print krne keliye hum parsing krte hai , jisse hum data ko read kr ske
-//       // parsing krne keliye hum express.json() use krte hai , jisse hum data ko read kr ske
-//       // parsing krne keliye hum express.urlencoded() use krte hai , jisse hum data ko read kr ske
-//       // parsing krne keliye hum body-parser use krte hai , jisse hum data ko read kr ske
+       // DATA ko print krne keliye hum parsing krte hai , jisse hum data ko read kr ske
+       // parsing krne keliye hum express.json() use krte hai , jisse hum data ko read kr ske
+       // parsing krne keliye hum express.urlencoded() use krte hai , jisse hum data ko read kr ske
+       // parsing krne keliye hum body-parser use krte hai , jisse hum data ko read kr ske
 
-//     // console.log("data saved successfully"); // yeah data ko store krne keliye console likha hua hai
+     // console.log("data saved successfully"); // yeah data ko store krne keliye console likha hua hai
 //     res.send("Data saved successfully"); //  and store krne ke baad yeah response bhi bhej rha hai
 // })
 
@@ -73,7 +73,6 @@ app.get("/book",(req ,res) =>{
 app.get("/book/:id",(req ,res) =>{
 
     const id = parseInt(req.params.id); // ye line humne isliye likhi hai , jisse hum id ko read kr ske , as we are using here dynamic routing
-
     // console.log(typeof req.params.id); // yeah string type ka hai , too usse number me convert krne keliye hum parseInt use krte hai
 
      const book = BookStore.find(info=> info.id === id); // with this line of code we can find the details of book with the particular id
