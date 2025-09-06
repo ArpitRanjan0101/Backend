@@ -56,14 +56,18 @@ const app = express();
 
 const BookStore =[
     {id:1,name:"Harry Potter",author:"DevFlux"},
-    {id;2,name:"Friends",author:"J.K.Rowling"},
+    {id:2,name:"Friends",author:"J.K.Rowling"},
     {id:3,name:"The Alchemist",author:"Paulo Coelho"}
 ]
 
+app.get("/book",(req ,res) =>{
+    res.send(BookStore); // we can also print json data here using get method , as if request will appear on this url , then it will show the data of the books which is present in the array of objects through get method
+})
 
 
 
 
-app.listen(4000,()=>{
-    console.log("listening at port 4000");
+
+app.listen(3000,()=>{
+    console.log("listening at port 3000");
 })
