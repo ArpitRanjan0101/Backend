@@ -35,9 +35,13 @@ app.get("/book/:id",(req ,res) =>{
 }) // ye line humne isliye likhi hai , jisse hum id ko read kr ske , as we are using here dynamic routing
 
 app.post("/book",(req,res)=>{
-
+    // console.log(req.body);
     BookStore.push(req.body);
     res.send("Data saved successfully"); 
+})
+
+app.patch("/book",(req,res)=>{
+    res.send("Patch");
 })
 
 
