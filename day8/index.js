@@ -45,8 +45,17 @@ app.post("/book",(req,res)=>{
 app.patch("/book",(req,res)=>{
     console.log(req.body);
 
-    const Book = BookStore.find(info=>info.id===req.body.id);
-    Book.author = req.body.author;
+    const Book = BookStore.find(info=>info.id===req.body.id); // this line of code is helping me to find the particular book with the help of id which is coming from the body of postman
+
+    // Book.author = req.body.author; // this line of code is helping me to update the author name of the particular book which is coming from the body of postman
+
+    // suppose multiple cases  update krne  aa gye agar too phir hum simply if statement ka use krne lgege
+
+    if(req.body.author)
+        BookStore.author = req.body.author;
+    if(req.body.name)
+        BookStore.name = req.body.name;
+
     res.send("Patch updated successfully");
 })
 
