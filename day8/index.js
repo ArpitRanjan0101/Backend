@@ -52,13 +52,28 @@ app.patch("/book",(req,res)=>{
     // suppose multiple cases  update krne  aa gye agar too phir hum simply if statement ka use krne lgege
 
     if(req.body.author)
-        BookStore.author = req.body.author;
+        Book.author = req.body.author;
     if(req.body.name)
-        BookStore.name = req.body.name;
+        Book.name = req.body.name;
 
     res.send("Patch updated successfully");
 })
 
+
+// In the PUT request , we will update the whole data of the particular book with the help of the id which is coming from the body of postman
+
+app.put("/book",(req,res)=>{
+    const Book = BookStore.find(info=>info.id===req.body.id);
+    Book.author = req.body.author;
+    Book.name = req.body.name;
+    res.send("Changes updated successfully");
+})
+
+// In the DELETE request , we will delete the whole data of the particular book with the help of the id which is coming from the body of postman
+
+app.delete("/book/:id",(req,res)=>{
+          
+})
 
 app.listen(3000,()=>{
     console.log("listening at port 3000");
