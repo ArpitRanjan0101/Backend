@@ -72,8 +72,16 @@ app.put("/book",(req,res)=>{
 // In the DELETE request , we will delete the whole data of the particular book with the help of the id which is coming from the body of postman
 
 app.delete("/book/:id",(req,res)=>{
-          
+    const id = ParseInt(req.params.id);
+    const index = BookStore.findIndex(info=>info.id===id); // this line of code se hum us particular book ka index find kr rhe hai , jisse hum delete krna chahte hai
+
+    // console.log(index); // index check krne keliye use kiya hai humne
+
+    BookStore.splice(index,1);  //  this line of code will help us to delte the paticular index book
+    res.send("Deleted successfully");  // after deleting the index , this meesage will be shown
 })
+
+// yes the above line of code for deleting the particular book from the bookstore array of objects
 
 app.listen(3000,()=>{
     console.log("listening at port 3000");
