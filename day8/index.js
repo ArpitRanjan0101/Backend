@@ -40,8 +40,14 @@ app.post("/book",(req,res)=>{
     res.send("Data saved successfully"); 
 })
 
+// Patch request ke through hum , kisi particular data me update ktr skte hai like firstly hum jis id me update krna hai use hum .find ke help se find krte hai then hum uske baad hum body of postman me raw data dekar change kr dete hai , bass yaha pe code ke through command dete hai ,mai execution postman ke through krte hai , jo generally front end se aata hai , jo bhi changes aaegi patch request dene ke baad , woo postman ke get request me show hoga simply
+
 app.patch("/book",(req,res)=>{
-    res.send("Patch");
+    console.log(req.body);
+
+    const Book = BookStore.find(info=>info.id===req.body.id);
+    Book.author = req.body.author;
+    res.send("Patch updated successfully");
 })
 
 
