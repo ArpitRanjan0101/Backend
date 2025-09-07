@@ -20,7 +20,10 @@ app.use(express.json()); // ye line humne isliye likhi hai , jisse hum data ko r
 
 app.get("/book",(req ,res) =>{
 
-     console.log(req.query);  // jis author ki hume book chye , usse search krke findout krne keliye hum Query ka use krte hai
+     console.log(req.query);  // jis author ki hume book chye , usse search krke findout krne keliye hum Query ka use krte hai , fetch krne keliye aur terminal pe show bhi ho jati hai
+     
+     const Book = BookStore.filter(info=>info.author === req.query.author); // phir hum yaha pe filter use krke bookstore se uss particular author ki data find out krege aur response me hum phir send back kr dege
+     res.send(Book );
 
     res.send(BookStore); // we can also print json data here using get method , as if request will appear on this url , then it will show the data of the books which is present in the array of objects through get method
 })
