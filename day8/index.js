@@ -6,11 +6,11 @@ const app = express();
 
 const BookStore =[
     {id:1,name:"Harry Potter",author:"DevFlux"},
-    {id:2,name:"Friends",author:"J.K.Rowling"},
+    {id:2,name:"Friends",author:"Vikas"},
     {id:3,name:"The Alchemist",author:"Paulo Coelho"},
     {id:4,name:"Wings of Fire",author:"A.P.J Abdul Kalam"},
     {id:5,name:"Rich Dad Poor Dad",author:"Robert Kiyosaki"},
-    {id:6,name:"Think and Grow Rich",author:"Napoleon Hill"},
+    {id:6,name:"Hello",author:"Vikas"},
     {id:7,name:"The Power of Now",author:"Eckhart Tolle"},
     {id:8,name:"The Subtle Art of Not Giving a F*ck",author:"Mark Manson"},
     {id:9,name:"Atomic Habits",author:"James Clear"}
@@ -19,6 +19,9 @@ const BookStore =[
 app.use(express.json()); // ye line humne isliye likhi hai , jisse hum data ko read kr ske , ye parsing krta hai , without this line we cant read the data from the frontend
 
 app.get("/book",(req ,res) =>{
+
+     console.log(req.query);  // jis author ki hume book chye , usse search krke findout krne keliye hum Query ka use krte hai
+
     res.send(BookStore); // we can also print json data here using get method , as if request will appear on this url , then it will show the data of the books which is present in the array of objects through get method
 })
 
@@ -72,7 +75,8 @@ app.put("/book",(req,res)=>{
 // In the DELETE request , we will delete the whole data of the particular book with the help of the id which is coming from the body of postman
 
 app.delete("/book/:id",(req,res)=>{
-    const id = ParseInt(req.params.id);
+
+    const id = parseInt(req.params.id);
     const index = BookStore.findIndex(info=>info.id===id); // this line of code se hum us particular book ka index find kr rhe hai , jisse hum delete krna chahte hai
 
     // console.log(index); // index check krne keliye use kiya hai humne
