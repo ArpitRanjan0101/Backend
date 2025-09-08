@@ -5,7 +5,10 @@
 
   app.use("/user",(req,res)=>{
 
-   res.send("Heelo ji")
+   console.log("first");
+   res.send("Heelo ji");
+   console.log("First First");
+   res.send("Mein Mast hu"); 
 
   })
 
