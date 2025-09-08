@@ -68,24 +68,28 @@
 app.use("/user" ,(req,res,next)=>{
    console.log('${Date.now()} ${req.method} ${req.url}');
    next();
+   
+// Authentication and authorization sab perform kr skte hai hum yaha pe , rather than bar bar code likhne se better hai ki hum , ek bar yahi pe app.use me globally likh de kyuki , app.use sabhi request ko accept krta hai
+
 })
 
 app.get("/user",(req,res)=>{
-   console.log('${Date.now()} ${req.method} ${req.url}');
+
+   // console.log('${Date.now()} ${req.method} ${req.url}');
 
    res.send("Info about user");
 })
 
 app.post("/user",(req,res)=>{
 
-   console.log('${Date.now()} ${req.method} ${req.url}');
+   // console.log('${Date.now()} ${req.method} ${req.url}');
 
    res.send("Info saved");
 })
 
 app.delete("/user",(req,res)=>{
 
-   console.log('${Date.now()} ${req.method} ${req.url}');
+   // console.log('${Date.now()} ${req.method} ${req.url}');
 
    res.send("Info Deleted");
 })
