@@ -3,6 +3,11 @@
  const express = require("express");
  const app = express();
 
+
+
+     // ROUTE HANDLER   NICHE LIKHE CODE KO BOLTE HAI , JO APP.USE KE ANDAR  LIKHA HUA HAI
+ 
+
   app.use("/user",(req,res,next)=>{
 
    console.log("first");
@@ -11,9 +16,14 @@
    // res.send("Mein Mast hu"); // two response possible nhi hai , ek single request pe
    next();  // yeah next niche wale code ka reference ko store krke rakh rha hai , aur call kr rha hai next ko hi , jaise hi call kiya then niche wala code execute hone lgega
  },
+  (req,res,next)=>{
+   console.log("Second"); // yeah console yaha pe terminal me print krega esse vs code me
+   // res.send("I am Second");
+   next();   
+  },
   (req,res)=>{
-   console.log("Second");
-   res.send("I am Second");
+   console.log("Third");
+   res.send("I am Third");
   }
 )
 
