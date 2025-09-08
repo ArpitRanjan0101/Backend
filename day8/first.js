@@ -65,6 +65,11 @@
 
 // MIIDLEWARE USECASE DICUSSED HERE 
 
+app.use("/user" ,(req,res,next)=>{
+   console.log('${Date.now()} ${req.method} ${req.url}');
+   next();
+})
+
 app.get("/user",(req,res)=>{
    console.log('${Date.now()} ${req.method} ${req.url}');
 
