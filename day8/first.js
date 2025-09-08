@@ -13,34 +13,77 @@
       
      // app.use ke andar sabhi route handlers ko hum Array ke andar rakh skte hai , jise generally arrya distructuring bhi bolte hai
 
-     // ya aisa bhi kr skte hai hum ki , kisi bhi particular route hnadler ko array ke andar rakhe aur kisi ko na rakhe , flexiblity puura hai yaha pe 
+     // ya aisa bhi kr skte hai hum ki , kisi bhi particular route hnadler ko array ke andar rakhe aur kisi ko na rakhe , flexiblity puura hai yaha pe  
 
 
-  app.use("/user",[(req,res,next)=>{
+//   app.use("/user",[(req,res,next)=>{
 
-   console.log("first");
-   // res.send("Heelo ji");
-   // console.log("First First");
-   // res.send("Mein Mast hu"); // two response possible nhi hai , ek single request pe
-   next();  // yeah next niche wale code ka reference ko store krke rakh rha hai , aur call kr rha hai next ko hi , jaise hi call kiya then niche wala code execute hone lgega
+//    console.log("first");
+//    // res.send("Heelo ji");
+//    // console.log("First First");
+//    // res.send("Mein Mast hu"); // two response possible nhi hai , ek single request pe
+//    next();  // yeah next niche wale code ka reference ko store krke rakh rha hai , aur call kr rha hai next ko hi , jaise hi call kiya then niche wala code execute hone lgega
 
-   // console.log("Sixth");
- },
-  (req,res,next)=>{
-   console.log("Second"); // yeah console yaha pe terminal me print krega esse vs code me
-   // res.send("I am Second");
-   next();   
-   // console.log("Fifth")
-  },
-  (req,res)=>{
-   console.log("Third");
-   res.send("I am Third");
-   // console.log("Fourth")
-  }]
-)
+//    // console.log("Sixth");
+//  },
+//   (req,res,next)=>{
+//    console.log("Second"); // yeah console yaha pe terminal me print krega esse vs code me
+//    // res.send("I am Second");
+//    next();   
+//    // console.log("Fifth")
+//   },
+//   (req,res)=>{
+//    console.log("Third");
+//    res.send("I am Third");
+//    // console.log("Fourth")
+//   }]
+// )
+
+// app.use("/user",(req,res,next)=>{
+//    console.log("first");
+//    // res.send("Hello ji");
+//    next();
+// })
+
+// app.use("/user",(req,res,next)=>{
+//    console.log("Second");
+//    // res.send("I am second");
+//    next();
+// })
+
+// app.use("/user",(req,res,next)=>{
+//    console.log("Third");
+//    // res.send("I am Third");
+//    next();
+// })
+
+// app.use("/user",(req,res,next)=>{
+//    console.log("Fourth");
+//    res.send("I am Fourth");
+// })
 
 
+// MIIDLEWARE USECASE DICUSSED HERE 
 
+app.get("/user",(req,res)=>{
+   console.log('${Date.now()} ${req.method} ${req.url}');
+
+   res.send("Info about user");
+})
+
+app.post("/user",(req,res)=>{
+
+   console.log('${Date.now()} ${req.method} ${req.url}');
+
+   res.send("Info saved");
+})
+
+app.delete("/user",(req,res)=>{
+
+   console.log('${Date.now()} ${req.method} ${req.url}');
+
+   res.send("Info Deleted");
+})
 
 
 
