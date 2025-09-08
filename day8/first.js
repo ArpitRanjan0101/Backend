@@ -8,7 +8,7 @@
    console.log("first");
    res.send("Heelo ji");
    console.log("First First");
-   res.send("Mein Mast hu"); 
+   // res.send("Mein Mast hu"); // two response possible nhi hai , ek single request pe
 
   })
 
