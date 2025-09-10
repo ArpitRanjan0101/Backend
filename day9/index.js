@@ -40,6 +40,23 @@ app.get("/food",(req ,res)=>{
 
 app.post("/admin",(req,res)=>{
     // we can write over here food item into this app.post if admin want to add somethings , but firstly i have to decide , is admin is reallty a admin , since using localhost:3000/admin , through which anyone can access to add the foodMenu , we will see , how to protect it  
+
+    // Authentication krna hoga hume , ki such me woo user hi hai na , then Authorisation krna hoga hume agar woo admin such me hua too
+
+    // Dummy code likh rhe hai yaha pe , ki admin ya user apna ek Token lekar aaega
+    const token = "ABCDEFG"
+    const Access = token ==="ABCDEFG" ?1:0;
+
+    if(Access){
+        FoodMenu.push(req.body);
+        res.send("Item Added succesfully");
+    }
+    else{
+        res.send("Item can't be added"); 
+    }
+
+// Verification humne if ..esle code likha hai 
+    if(Access)
 })
 
 
