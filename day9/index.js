@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+
+app.use(express.json(    ));
 // CRUD : Create Read update Delete , we will study here
 
 // we are going to make the project over here 
@@ -35,7 +37,7 @@ const AddToCart =[] ;
 
 // someone who want to see the foodmenu over the screen , so we have given here app.get request , they can see the  foodmenu , admin aur user dono dekh skte hai
 app.get("/food",(req ,res)=>{
-    res.status(200).send(FoodMenu);  // here we have send the status with the get request , so that client can understand the succesful code run ove rthe backend and can shown at the frontend
+    res.status(200).send(FoodMenu);  // here we have send the status with the get request , so that client can understand the succesful code run ove rthe backend and can shown at the frontend 
 })
 
 app.post("/admin",(req,res)=>{
@@ -49,15 +51,27 @@ app.post("/admin",(req,res)=>{
 
     if(Access){
         FoodMenu.push(req.body);
-        res.send("Item Added succesfully");
+        res.status(201).send("Item Added succesfully");
     }
     else{
-        res.send("Item can't be added"); 
+        res.status(202).send("Item can't be added"); 
     }
 
 // Verification humne if ..else  code likha hai 
  
     // if(Access)
+})
+
+
+// we will use Delete also over here , which would be done by the admin itself 
+
+app/.delete("/admin/:id",(req,res)=>{      // jis bhi item ko delete krna hai uski id as parameter bhejna hoga yaha pe
+    const token ="ABCVDE"
+    const Access = token === "ABCVDE" ?1:0;
+
+    if(Access){
+        const id = parseInt(req.params.id);
+    }
 })
 
 
