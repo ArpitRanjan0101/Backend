@@ -55,8 +55,9 @@ app.post("/admin",(req,res)=>{
         res.send("Item can't be added"); 
     }
 
-// Verification humne if ..esle code likha hai 
-    if(Access)
+// Verification humne if ..else  code likha hai 
+ 
+    // if(Access)
 })
 
 
