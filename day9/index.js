@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 
-app.use(express.json(    ));
+app.use(express.json());
 // CRUD : Create Read update Delete , we will study here
 
 // we are going to make the project over here 
@@ -65,7 +65,7 @@ app.post("/admin",(req,res)=>{
 
 // we will use Delete also over here , which would be done by the admin itself 
 
-app/.delete("/admin/:id",(req,res)=>{      // jis bhi item ko delete krna hai uski id as parameter bhejna hoga yaha pe
+app.delete("/admin/:id",(req,res)=>{      // jis bhi item ko delete krna hai uski id as parameter bhejna hoga yaha pe
     const token ="ABCVDE"
     const Access = token === "ABCVDE" ?1:0;
 
@@ -87,6 +87,17 @@ app/.delete("/admin/:id",(req,res)=>{      // jis bhi item ko delete krna hai us
     else{
         res.status(403).send("No permission");
     }
+})
+
+app.patch("/admin" , (req ,res)=>{
+// changes item into the food menu
+const token ="ECFHBVG"
+const Access = token === "ECFHBVG"?1:0;
+if (Access){
+
+}
+
+
 })
 
 
