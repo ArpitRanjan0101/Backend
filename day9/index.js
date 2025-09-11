@@ -89,12 +89,32 @@ app.delete("/admin/:id",(req,res)=>{      // jis bhi item ko delete krna hai usk
     }
 })
 
-app.patch("/admin" , (req ,res)=>{
+app.patch("/admin/:id" , (req ,res)=>{
 // changes item into the food menu
 const token ="ECFHBVG"
 const Access = token === "ECFHBVG"?1:0;
 if (Access){
+     const id = req.body.id;
+     const food = FoodMenu.find(item=>item.id===id);
+    if(fooddata){
 
+        if(req.body.food)
+            fooddata.food =req.body.food;
+        if(req.body.category)
+            fooddata.category = req.body.category;
+        if(req.body.price)
+            fooddata.price = req.body.price; 
+
+        res.send("Successfully Updated");
+      
+    } 
+    else {
+        res.send("Item not exist")
+    }
+}
+
+else{
+    res.status(403).send("No permission")
 }
 
 
