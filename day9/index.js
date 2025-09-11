@@ -35,7 +35,7 @@ const AddToCart =[] ;
 
 // someone who want to see the foodmenu over the screen , so we have given here app.get request , they can see the  foodmenu , admin aur user dono dekh skte hai
 app.get("/food",(req ,res)=>{
-    res.send(FoodMenu);
+    res.status(200).send(FoodMenu);  // here we have send the status with the get request , so that client can understand the succesful code run ove rthe backend and can shown at the frontend
 })
 
 app.post("/admin",(req,res)=>{
