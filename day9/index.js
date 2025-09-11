@@ -71,6 +71,21 @@ app/.delete("/admin/:id",(req,res)=>{      // jis bhi item ko delete krna hai us
 
     if(Access){
         const id = parseInt(req.params.id);
+
+        const index = FoodMenu.findIndex(item => item.id ===id);
+
+        if(index===-1){  //item present nhi hua uske liye likhe hai hum yaha pe
+
+            res.send("item doesn't Exist"); 
+
+        }
+        else{
+            FoodMenu.splice(index,1);
+            res.send("Successfully Deleted");
+        }
+    }
+    else{
+        res.status(403).send("No permission");
     }
 })
 
