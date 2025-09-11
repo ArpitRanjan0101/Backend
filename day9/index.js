@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const{Auth}=require("./middleware/auth")
 
 
 app.use(express.json());
@@ -40,6 +41,13 @@ app.get("/food",(req ,res)=>{
     res.status(200).send(FoodMenu);  // here we have send the status with the get request , so that client can understand the succesful code run ove rthe backend and can shown at the frontend 
 })
 
+
+// mujhe yaha pe chahye ki mai bar bar code likhe ke chakar me na padu , isilye mai yay pe app.use kr raha hu
+
+app.use("/admin",Auth);
+
+
+
 app.post("/admin",(req,res)=>{
     // we can write over here food item into this app.post if admin want to add somethings , but firstly i have to decide , is admin is reallty a admin , since using localhost:3000/admin , through which anyone can access to add the foodMenu , we will see , how to protect it  
 
@@ -49,13 +57,12 @@ app.post("/admin",(req,res)=>{
     const token = "ABCDEFG"
     const Access = token ==="ABCDEFG" ?1:0;
 
-    if(Access){
+    // if(Access){
         FoodMenu.push(req.body);
         res.status(201).send("Item Added succesfully");
-    }
-    else{
-        res.status(202).send("Item can't be added"); 
-    }
+    // else{
+    //     res.status(202).send("Item can't be added"); 
+    // }
 
 // Verification humne if ..else  code likha hai 
  
@@ -69,7 +76,7 @@ app.delete("/admin/:id",(req,res)=>{      // jis bhi item ko delete krna hai usk
     const token ="ABCVDE"
     const Access = token === "ABCVDE" ?1:0;
 
-    if(Access){
+    // if(Access){
         const id = parseInt(req.params.id);
 
         const index = FoodMenu.findIndex(item => item.id ===id);
@@ -78,24 +85,25 @@ app.delete("/admin/:id",(req,res)=>{      // jis bhi item ko delete krna hai usk
 
             res.send("item doesn't Exist"); 
 
-        }
-        else{
-            FoodMenu.splice(index,1);
-            res.send("Successfully Deleted");
-        }
+        // }
+        // else{
+        //     FoodMenu.splice(index,1);
+        //     res.send("Successfully Deleted");
+        // }
     }
     else{
         res.status(403).send("No permission");
     }
 })
 
-app.patch("/admin/:id" , (req ,res)=>{
+app.patch("/admin" , (req ,res)=>{
 // changes item into the food menu
 const token ="ECFHBVG"
 const Access = token === "ECFHBVG"?1:0;
-if (Access){
+// if (Access){
      const id = req.body.id;
-     const food = FoodMenu.find(item=>item.id===id);
+     const fooddata = FoodMenu.find(item=>item.id===id);
+
     if(fooddata){
 
         if(req.body.food)
@@ -111,11 +119,11 @@ if (Access){
     else {
         res.send("Item not exist")
     }
-}
+ 
 
-else{
-    res.status(403).send("No permission")
-}
+// else{
+//     res.status(403).send("No permission")
+// }
 
 
 })
