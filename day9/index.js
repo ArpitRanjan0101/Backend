@@ -44,7 +44,7 @@ app.get("/food",(req ,res)=>{
 
 // mujhe yaha pe chahye ki mai bar bar code likhe ke chakar me na padu , isilye mai yay pe app.use kr raha hu
 
-app.use("/admin",Auth);
+app.use("/admin",Auth); // here this shows the authentication use through app.use
 
 
 
