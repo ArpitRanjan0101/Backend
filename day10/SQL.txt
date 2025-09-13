@@ -1,0 +1,1 @@
+In this lecture day 10 , we have studied about the SQL database along with it's ACID property also learned about error handling in the database 
