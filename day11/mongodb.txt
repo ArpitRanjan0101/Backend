@@ -1,1 +1,3 @@
  in this day 11 , we have studied about the mongodb indepth in elaborated way , which give me detail understanding of the Database whether , its is campuss and cloud
+ and we discusss about the data finding process through Binary search using AVL tree with the help of linkedlist 
+ while we discuss about the Sharding process which tells us that ,  we can'tt store the data in single database as , we needed to store it into the multiple database
