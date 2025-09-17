@@ -1,0 +1,1 @@
+in this lecture we have studied about the B+ tree , B tree as well as , difference between JSON and BSON , and how database working happens intenally , the root cause of the data flow we worked over that
