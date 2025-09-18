@@ -1,0 +1,1 @@
+in this section we have studied about the mongodb installation,
