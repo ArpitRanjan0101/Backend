@@ -1,1 +1,1 @@
-in this section we have studied about the mongodb installation,
+in this section we have studied about the mongodb installation,as well as , we will study about the data base mangement 
