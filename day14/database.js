@@ -25,8 +25,8 @@ async function main() {
   // Use connect method to connect to the server
   await client.connect();  // this line od code tells us that to connect with the database server , it would take the some milisec , so for that , period of time wait and till then don't execute the next line of code
   console.log('Connected successfully to server');
-  const db = client.db(dbName);  // this line of code tells to connect with the database whose name is 'CoderArmy' , which is present within the cluster
-  const collection = db.collection('documents');
+  const db = client.db(CoderArmy);  // this line of code tells to connect with the database whose name is 'CoderArmy' , which is present within the cluster
+  const collection = db.collection('user'); // this line of code tells to connect with the collection whose name is 'user' , which is present within the database whose name is 'CoderArmy'
 
   // the following code examples can be pasted here...
 
