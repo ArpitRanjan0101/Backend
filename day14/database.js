@@ -33,7 +33,7 @@ async function main() {
   return 'done.';
 }
 
-main()
+main()    // we called the main function from here , thorugh this line of code .
   .then(console.log)
-  .catch(console.error)
-  .finally(() => client.close());
+  .catch(console.error) // koe error aa jae to  to uss error ko catch print karwa dega
+  .finally(() => client.close());  // finally yeah krta hai ki , jo connection bana hai usse close kr do .
