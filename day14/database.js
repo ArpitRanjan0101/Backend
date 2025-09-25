@@ -4,22 +4,28 @@
 // but we have not mentioned the database name , so we will add that in the below code
 // also we will connect through mongoose
 // we will see the full working   
+
+
+
+
+// BElow line of code help us to connect with the mongodb database server
+
 const { MongoClient } = require('mongodb');
 // or as an es module:
 // import { MongoClient } from 'mongodb'
 
 // Connection URL
 const url = "mongodb+srv://arpitvijans1234:<db_password>@clustertest.itezwo1.mongodb.net/";
-const client = new MongoClient(url);
+const client = new MongoClient(url); // with the help of this URL we usually connect with the cluster 
 
 // Database Name
 const dbName = 'CoderArmy';
 
 async function main() {
   // Use connect method to connect to the server
-  await client.connect();
+  await client.connect();  // this line od code tells us that to connect with the database server , it would take the some milisec , so for that , period of time wait and till then don't execute the next line of code
   console.log('Connected successfully to server');
-  const db = client.db(dbName);
+  const db = client.db(dbName);  // this line of code tells to connect with the database whose name is 'CoderArmy' , which is present within the cluster
   const collection = db.collection('documents');
 
   // the following code examples can be pasted here...
