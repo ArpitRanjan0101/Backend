@@ -37,11 +37,19 @@ catch(err){
 
 })
 
+
+
 app.delete("/info", async (req, res) => {
    await User.deleteOne({name:"Vishal"});   // await likhna bhut jrurui hai bhai yaha pe , kyuki network call jaega to kuch time to lgegga response call back hone me , to uske liye await lagana jruri hai 
   res.send("Data deleted successfully"); 
 
 });  // delete the data from the database
+
+
+ app.put("/info", async (req, res) => {
+   const ans = await User.updateOne({name:"Arpit"}, {age: 30});  // this line of code me humne Ankit ki age ko 30 se update kr diya hai likin jaise hi store krne ki bari aae too humne res me store kiya , jo ki ek call tha , likin jaise hi res se result kiya too , woo sahi se work krne lga 
+   res.send("Data updated successfully");
+ });  // update the data in the database
 
 
 
