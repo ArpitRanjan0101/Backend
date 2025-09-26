@@ -37,6 +37,13 @@ catch(err){
 
 })
 
+app.delete("/info", async (req, res) => {
+   await User.deleteOne({name:"Vishal"});   // await likhna bhut jrurui hai bhai yaha pe , kyuki network call jaega to kuch time to lgegga response call back hone me , to uske liye await lagana jruri hai 
+  res.send("Data deleted successfully"); 
+
+});  // delete the data from the database
+
+
 
 main()
     .then(async() => {      // yaha pe humne async isliye lagaya hai taki hum await use kr ske neeche
