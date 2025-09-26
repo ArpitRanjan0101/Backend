@@ -38,7 +38,7 @@ console.log('Found documents =>', findResult);
 const insertResult = await collection.insertOne({ name: 'arpit', age:40});
 console.log('Inserted documents =>', insertResult);
 
-// yeah upar wali lines of code ,insertion keliye use he hai , agar mujhe data enter krna hai too , mere terminal me show too hojaega hi as well as , database me bhi update ho jaega
+// yeah upar wali lines of code ,insertion keliye use he hai , agar mujhe data enter krna hai too , mere terminal  me show too hojaega hi as well as , database me bhi update ho jaega
 
   return 'done.';
 }
