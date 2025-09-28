@@ -26,6 +26,12 @@ app.post("/info" ,async (req ,res) => {   // sync function likha jaruri hai so t
 // another way to store the data in the database
 // we can use create() function to create the object and save it in the database directly
 // to  avoid the error we use try catch block
+   
+// this try and catch finally are used to handle the errors in javascript
+// try block me hum wo code likhte hai jisme error aane ka chance hota hai
+// agar try block me error aata hai to catch block me jaata hai aur waha pe hum error ko handle karte hai
+// finally block me wo code likhte hai jo hamesha execute hota hai chahe error aaye ya na aaye
+
 
 try{
 await User.create(req.body);
