@@ -1,3 +1,5 @@
+// Server setup
+
 const express = require('express');
 const app = express();
 const main = require('./database');
