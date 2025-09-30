@@ -5,4 +5,4 @@ async function main() {
 }
 
 
-module.exports = main;  
+module.exports = main;  // it is used to export the main function
