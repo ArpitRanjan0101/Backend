@@ -19,3 +19,5 @@ main()
 })
 
 .catch((err)=>console.log(err));
+
+// server setup done here
