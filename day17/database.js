@@ -7,4 +7,4 @@ async function main() {
 
 
 
-module.exports = main; // ye isliye ki hum is file ko import kar sakein , jahan jahan hume database se connect hona hai
+module.exports = main; // ye isliye ki hum is file ko import kar sakein , jahan jahan hume database se connect hona hai aur help krta hai
