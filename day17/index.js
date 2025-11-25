@@ -14,3 +14,6 @@ main()
     })
 })
 .catch((err)=>console.log(err));  
+
+
+// we face an error here , that we unable to connect with the db becoz we could not install the mongoose package
