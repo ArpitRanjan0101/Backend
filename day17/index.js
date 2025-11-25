@@ -6,6 +6,23 @@ const User = require("./users");
 app.use(express.json());
 
 
+// In this api we will create a user and store it in the database , will write in try block while in catch block we will handle the error
+
+app.post("/register",async(req,res)=>{
+
+
+    try{
+        
+        await User.create(req.body);   // here we are using create method of mongoose to create a user and store it in the db , if any error occurs it will go to catch block
+        res.send("User Registered Successfully"); // after successful creation of user this message will be sent to the client
+    }
+
+    catch(err){
+        res.send("Errror"+ err.message);  // if any error then it will handle all the stuff , this catch block will work
+    }
+     
+})
+
 main()
 .then(async()=>{                      // here we did mnistake of not using then and catch with main function which returns a promise
     console.log("Connected to DB")
