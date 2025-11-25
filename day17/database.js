@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 async function main() {
-    await mongoose.connect("mongodb+")
+    await mongoose.connect("mongodb+srv://arpitvijans1234:arpitvijans11111@clustertest.itezwo1.mongodb.net/Instagram") // in the previous database we had created the database with Bookstore name but now in the new connection  we are creating the database with Aadhar name
 }
 
 

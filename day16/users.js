@@ -24,7 +24,7 @@ const userSchema = new Schema({
         type:String
     },
     photo:{
-        type:String  // here we will store only the link of the pic while the pic will be hosted in the db     
+        type:String  // here we will store only the link of the pic while the pic will be hosted in the db , here photo link is of string type    
     }
     
     
@@ -32,5 +32,5 @@ const userSchema = new Schema({
     
 })
 
-const User = mongoose.model("user",userSchema);
+const User = mongoose.model("user",userSchema);  // after schema design we created the model here and then we exported it
 module.exports = User;
