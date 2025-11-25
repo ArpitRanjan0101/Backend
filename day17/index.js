@@ -69,6 +69,28 @@ app.delete("/user/:id",async(req,res)=>{
 })
 
 
+// Here we will use app.patch api to update the user by ID and we are using findbyidandupdate method of mongoose so that it can find update the id by finding it first
+
+// {
+//     "_id":"6925cd339dae346b40de1e21",
+//     "age":13,
+//     "emailId":"arpitr@gmail.com"
+// }
+
+app.patch("/user",async(req,res)=>{
+    try{
+          
+        const{_id , ...update} =req.body;  // we are doing here array destructuring to get the id and the rest of the data to be updated
+         await User.findByIdAndUpdate(_id,update);
+         res.send("Update Successful");  
+    }
+
+    catch(err){
+        res.send("Error"+ err.message);
+    }
+})
+
+
 main()
 .then(async()=>{                      // here we did mnistake of not using then and catch with main function which returns a promise
     console.log("Connected to DB")
