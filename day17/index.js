@@ -40,12 +40,27 @@ app.get("/info",async(req ,res)=>{
 })
 
 
-// Here we will make the app.get for getting the info by ID so that we can get the information relatd to particular user by ID
+// Here we will make the app.get for getting the info by ID so that we can get the information relate  d to particular user by ID
 
 app.get("/user/:id",async(req,res)=>{
     try{
        const result = await User.findById(req.params.id);
        res.send(result);
+    }
+
+    catch(err){
+        res.send("Error"+ err.message);
+    }
+})
+
+
+// Here we will make app.Delete api to delete the user by ID and we are using findbyidanddelete method of mongoose so that it can find delete the id by finding it first
+
+app.delete("/user/:id",async(req,res)=>{
+
+    try{
+        await User.findByIdAndDelete(req.params.id);
+       res.send("User Deleted Successfully");
     }
 
     catch(err){
