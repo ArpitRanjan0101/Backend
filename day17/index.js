@@ -34,8 +34,22 @@ app.get("/info",async(req ,res)=>{
     }
 
     catch(err){
-         res.send("Error"+err/message);
+         res.send("Error"+err.message);
    
+    }
+})
+
+
+// Here we will make the app.get for getting the info by ID so that we can get the information relatd to particular user by ID
+
+app.get("/user/:id",async(req,res)=>{
+    try{
+       const result = await User.findById(req.params.id);
+       res.send(result);
+    }
+
+    catch(err){
+        res.send("Error"+ err.message);
     }
 })
 
