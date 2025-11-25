@@ -6,7 +6,8 @@ const {Schema} = mongoose;
 
 const userSchema = new Schema({
    firstName:{
-    type:String
+    type:String,
+    required:true  // this is actually a validation we are applying here to validate that first name is required field , agar jab tak hum required :true nahi karenge tab tak hum user create  nhi kar payenge bina first name ke bhi
    },
    lastName:{
     type:String 
@@ -20,7 +21,8 @@ const userSchema = new Schema({
         type:String
    },
    emailId:{
-        type:String
+        type:String,
+        required:true 
    },
    password:{
         type:String
