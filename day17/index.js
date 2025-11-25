@@ -23,6 +23,11 @@ app.post("/register",async(req,res)=>{
      
 })
 
+// here we are going to make app.get api to get all the users from the database
+
+
+
+
 main()
 .then(async()=>{                      // here we did mnistake of not using then and catch with main function which returns a promise
     console.log("Connected to DB")
