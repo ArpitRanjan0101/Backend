@@ -18,14 +18,26 @@ app.post("/register",async(req,res)=>{
     }
 
     catch(err){
-        res.send("Errror"+ err.message);  // if any error then it will handle all the stuff , this catch block will work
+        res.send("Error"+ err.message);  // if any error then it will handle all the stuff , this catch block will work
     }
      
 })
 
 // here we are going to make app.get api to get all the users from the database
 
+app.get("/info",async(req ,res)=>{
+    try{
+        const result = await User.find();  // here we have used the find method of mongoose to get all the users from the database
+        // and also we have used here await function since the information will not appear instantly it will take some time to fetch the data from the database
+        res.send(result);
+    
+    }
 
+    catch(err){
+         res.send("Error"+err/message);
+   
+    }
+})
 
 
 main()
