@@ -22,7 +22,8 @@ const userSchema = new Schema({
         max:65
    },
    gender:{
-        type:String
+        type:String,
+        enum:["male","female","others"]  // enum is used to restrict the values that can be taken by gender
    },
    emailId:{
         type:String,
