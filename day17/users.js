@@ -23,7 +23,12 @@ const userSchema = new Schema({
    },
    gender:{
         type:String,
-        enum:["male","female","others"]  // enum is used to restrict the values that can be taken by gender
+     //    enum:["male","female","others"]  // enum is used to restrict the values that can be taken by gender 
+
+     validate(value){
+          if(!["male","female","others"].includes(value))
+               throw new Error("Invalid Gender")
+     }
    },
    emailId:{
         type:String,
