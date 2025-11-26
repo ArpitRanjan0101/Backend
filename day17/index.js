@@ -14,6 +14,12 @@ app.post("/register",async(req,res)=>{
     try{
 
         // we will validate here  that ki user ka first name present hai ki nhi , agar hai present to hi aage ke line of code execute honge otherwise nhi honge
+
+        // req.body ke andar data aaaya hai usmein first_name present hai ki nahi yeah check karenge
+
+        ["firstName","emailId","age"] 
+
+
         
         await User.create(req.body);   // here we are using create method of mongoose to create a user and store it in the db , if any error occurs it will go to catch block
         res.send("User Registered Successfully"); // after successful creation of user this message will be sent to the client
