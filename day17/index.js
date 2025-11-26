@@ -77,11 +77,11 @@ app.delete("/user/:id",async(req,res)=>{
 //     "emailId":"arpitr@gmail.com"
 // }
 
-app.patch("/user",async(req,res)=>{
+app.patch("/user",async(req,res)=>{ 
     try{
           
         const{_id , ...update} =req.body;  // we are doing here array destructuring to get the id and the rest of the data to be updated
-         await User.findByIdAndUpdate(_id,update);
+         await User.findByIdAndUpdate(_id, update, { runValidators: true });
          res.send("Update Successful");  
     }
 
