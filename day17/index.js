@@ -12,6 +12,8 @@ app.post("/register",async(req,res)=>{
 
 
     try{
+
+        // we will validate here  that ki user ka first name present hai ki nhi , agar hai present to hi aage ke line of code execute honge otherwise nhi honge
         
         await User.create(req.body);   // here we are using create method of mongoose to create a user and store it in the db , if any error occurs it will go to catch block
         res.send("User Registered Successfully"); // after successful creation of user this message will be sent to the client
@@ -79,13 +81,12 @@ app.delete("/user/:id",async(req,res)=>{
 
 app.patch("/user",async(req,res)=>{ 
     try{
-          
         const{_id , ...update} =req.body;  // we are doing here array destructuring to get the id and the rest of the data to be updated
          await User.findByIdAndUpdate(_id, update, { runValidators: true });
          res.send("Update Successful");  
     }
 
-    catch(err){
+    catch(err){ 
         res.send("Error"+ err.message);
     }
 })

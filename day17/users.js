@@ -41,7 +41,7 @@ const userSchema = new Schema({
         type:String, // type isislye string kyuki hum url store karenge , photo kahi aur hi store hogi
         default:"this is the default photo"
    }
-},{timestamps:true});  // timestamps:true ka matlab hai ki jab bhi koi user create hoga ya update hoga to uska time bhi store ho jayega automatically 
+},{timestamps:true});  // timestamps:true ka matlab hai ki jab bhi koi user create hoga ya update hoga to uska time bhi store ho jayega automatically  
 
 const User = mongoose.model("user", userSchema);
 
