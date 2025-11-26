@@ -17,7 +17,13 @@ app.post("/register",async(req,res)=>{
 
         // req.body ke andar data aaaya hai usmein first_name present hai ki nahi yeah check karenge
 
-        ["firstName","emailId","age"] 
+       const mandatoryField= ["firstName","emailId","age"] ;
+
+       const IsAllowed = Object.keys(req.body).every((key)=> mandatoryField.includes(keys)); 
+
+       if(!IsAllowed){
+        throw new Error("Fields Missing");
+       }
 
 
         
