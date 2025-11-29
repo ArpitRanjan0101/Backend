@@ -1,5 +1,5 @@
-const express = require('express');
-const app = express();
+const express = require('express'); 
+const app = express();   // we store the express function in the app variable
 const main = require("./database");
 const User = require("./users");
 
