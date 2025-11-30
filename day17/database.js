@@ -6,5 +6,5 @@ async function main() {
 
 
 
-
+   // const userId = req.params.id;  // here we are getting the id from the url parameter
 module.exports = main; // ye isliye ki hum is file ko import kar sakein , jahan jahan hume database se connect hona hai aur help krta hai
