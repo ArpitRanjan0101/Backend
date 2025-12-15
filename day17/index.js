@@ -6,7 +6,7 @@ const User = require("./users");
 app.use(express.json());
 
 
-// In this api we will create a user and store it in the database , will write in try block while in catch block we will handle the error
+// In this api we will create a user and store it in the database , will write in try block while in catch block we will handle the error // donw here
 
 app.post("/register",async(req,res)=>{
 
