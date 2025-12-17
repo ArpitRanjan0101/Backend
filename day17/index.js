@@ -15,7 +15,7 @@ app.post("/register",async(req,res)=>{
 
         // we will validate here  that ki user ka first name present hai ki nhi , agar hai present to hi aage ke line of code execute honge otherwise nhi honge
 
-        // req.body ke andar data aaaya hai usmein first_name present hai ki nahi yeah check karenge and execute karenge
+        // req.body ke andar data aaaya hai usmein first_name present hai ki nahi yeah check karenge and execute karenge , futher code only if it is present
 
        const mandatoryField= ["firstName","emailId","age"] ;
 
