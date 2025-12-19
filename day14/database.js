@@ -30,7 +30,7 @@ async function main() {
 
   // the following code examples can be pasted here below
 
-  const findResult = await collection.find({}).toArray();
+  const findResult = await collection.find({}).toArray();// await function built here
 console.log('Found documents =>', findResult);
 
 // upar wali lines of code , me findresult likha hua hai , jisme humne collection ke andar se saare documents ko find kar ke , usse array me convert kar diya hai , aur uske baad usse print karwa diya hai aur jo bhi data  database me created tha , wo yaha terminal pe fecth hogya aur print bhi hogya hai
