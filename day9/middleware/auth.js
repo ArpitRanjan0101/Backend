@@ -1,4 +1,5 @@
-  const Auth = (req,res,next)=>{
+  const Auth = (req,res,next)=>{   // ye middleware function hai , jisme hum authentication kr rhe hai
+    // yaha pe humne simple authentication krwa rakha hai , ki agar token sahi hai too hi aage jao warna ruk jao
     const token = "WNVHDF"
     const Access = token === "WNVHDF" ?1:0;
 
