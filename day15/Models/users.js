@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const {Schema} = mongoose;
+const mongoose = require('mongoose'); // this line help us to import mongoose library
+const {Schema} = mongoose; // this line help us to import Schema from mongoose library
 
 const userSchema = new Schema({    // oe we can us here  new mongoose.Schema bhi likh skte hai
         name: String,
