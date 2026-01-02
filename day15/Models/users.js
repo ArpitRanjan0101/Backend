@@ -8,4 +8,4 @@ const userSchema = new Schema({    // oe we can us here  new mongoose.Schema bhi
         gender: String   
     })
     const User = mongoose.model('User', userSchema);
-module.exports = User;
+module.exports = User; // this line help us to export User model to use in other files
