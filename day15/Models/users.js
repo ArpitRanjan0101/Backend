@@ -7,5 +7,5 @@ const userSchema = new Schema({    // oe we can us here  new mongoose.Schema bhi
         city: String,
         gender: String   
     })
-    const User = mongoose.model('User', userSchema);
+    const User = mongoose.model('User', userSchema); // this line help us to create User model using userSchema
 module.exports = User; // this line help us to export User model to use in other files
