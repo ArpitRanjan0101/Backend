@@ -41,7 +41,7 @@ async function main() {   // TO connect with the mongodb , we are writing this f
  } 
 
 
- module.exports =main;
+ module.exports =main; // we are using to export this function to use in other files
 
 // main()
 //     .then(() => console.log("ConnectED TO db"))
