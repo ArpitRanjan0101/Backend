@@ -19,7 +19,7 @@ app.post("/register",async(req,res)=>{
 
        const mandatoryField= ["firstName","emailId","age"] ;
 
-       const IsAllowed = Object.keys(req.body).every((key)=> mandatoryField.includes(keys)); 
+       const IsAllowed = Object.keys(req.body).every((key)=> mandatoryField.includes(key)); 
 
        if(!IsAllowed){
         throw new Error("Fields Missing");

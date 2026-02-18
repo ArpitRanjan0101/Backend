@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();   // we store the express function in the app variable
 const main = require("./database");
 const User = require("./users");
+const validateUser = require("./utils/validateUser");
 
 app.use(express.json());
 
@@ -17,15 +18,21 @@ app.post("/register",async(req,res)=>{
 
         // req.body ke andar data aaaya hai usmein first_name present hai ki nahi yeah check karenge and execute karenge , futher code only if it is present
 
-       const mandatoryField= ["firstName","emailId","age"] ;
 
-       const IsAllowed = Object.keys(req.body).every((key)=> mandatoryField.includes(keys)); 
+       validateUser(req.body);  // here we are calling the validateUser function to validate the user data before creating the user in the database
 
-       if(!IsAllowed){
-        throw new Error("Fields Missing");
-       }
+    //    const mandatoryField= ["firstName","emailId","age","password"] ;
 
+    //    const IsAllowed = Object.keys(req.body).every((key)=> mandatoryField.includes(key)); 
 
+    //    if(!IsAllowed){
+    //     throw new Error("Fields Missing");
+    //    }
+
+       
+     // WE ARE GOING TO DO VALIDATION OF THE PASSWORD AT THE API LEVEL SO THAT BY THE USER END THERE HSOULD COMPLEX PASSWORD CAN BE SET , SO LET'S VALIDATE IT 
+      // ON THE API LEVEL WE CAN ALSO CHECK THE SPECIFIC REQUIRED FIELD NEEDED BY US
+       // FIRSTname should be length of >>3 , max <20
         
         await User.create(req.body);   // here we are using create method of mongoose to create a user and store it in the db , if any error occurs it will go to catch block
         res.send("User Registered Successfully"); // after successful creation of user this message will be sent to the client
