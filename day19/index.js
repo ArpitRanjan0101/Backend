@@ -11,8 +11,6 @@ app.use(express.json());
 // In this api we will create a user and store it in the database , will write in try block while in catch block we will handle the error // donw here
 
 app.post("/register",async(req,res)=>{
-
-
     try{
 
         // we will validate here  that ki user ka first name present hai ki nhi , agar hai present to hi aage ke line of code execute honge otherwise nhi honge
@@ -54,6 +52,33 @@ app.post("/register",async(req,res)=>{
     }
      
 })
+
+
+
+// we will make the login api here , so that we can login with the email and password and we will validate the email and password with the database and if it is valid then we will send the success message otherwise we will send the error message
+app.post("/login", async(req , res)=>{
+    try{
+     // validate karna hai yaha pe
+     const people = await User.findById(req.body._id);
+     
+     if(!(req.body.emailId ===people.emailId))
+        throw new Error("Invalid credential");
+
+ const IsAllowed = await bcrypt.compare(req.body.password ,10);
+
+    if(!IsAllowed)
+        throw new Error("Invalid credential");
+
+
+    res.send("Login successfully");
+
+ }
+    catch(err){
+       res.send("Error:"+err.message);
+    }
+})
+
+
 
 // here we are going to make app.get api to get all the users from the database
 
