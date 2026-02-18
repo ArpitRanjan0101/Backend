@@ -1,19 +1,23 @@
 const { default: isEmail } = require("validator/lib/isEmail");
 
- const validator = reuqire("validator");
+ const validator = require("validator");
 
- function validateUser(date){
+ function validateUser(data){
  const mandatoryField= ["firstName","emailId","age","password"] ;
 
-       const IsAllowed = Object.keys(date).every((key)=> mandatoryField.includes(key)); 
+       const IsAllowed = Object.keys(data).every((key)=> mandatoryField.includes(key)); 
 
-       if(!IsAllowed){
+       if(!IsAllowed)
         throw new Error("Fields Missing");
-       }
-       if(!validator.isEmail(date.emailId))
+       
+       if(!validator.isEmail(data.emailId))
          throw new Error("invalid Email");  
         
-       if(!validator.isStrongPassword(date.password))
+       if(!validator.isStrongPassword(data.password))
          throw new Error("Password is not strong enough");
+
+       if(!(data.firstName.length>=3 && data.firstName.length<=20))
+         throw new Error("firstName length is not in range");
+        
     };
       module.exports = validateUser; 
