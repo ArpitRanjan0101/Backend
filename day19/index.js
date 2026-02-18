@@ -25,6 +25,8 @@ app.post("/register",async(req,res)=>{
        // ON THE API LEVEL WE CAN ALSO CHECK THE SPECIFIC REQUIRED FIELD NEEDED BY US
        // FIRSTname should be length of >>3 , max <20)  
 
+
+       // here below we are converting the password into the hascode using bcrypt libray
      req.body.password= await bcrypt.hash(req.body.password,10); // so here we are using the bcrypt library to hash the password , so that the hacker could not hack the password 
 
 
