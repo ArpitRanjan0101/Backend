@@ -1,4 +1,7 @@
- 
+const { default: isEmail } = require("validator/lib/isEmail");
+
+ const validator = reuqire("validator");
+
  function validateUser(date){
  const mandatoryField= ["firstName","emailId","age","password"] ;
 
@@ -7,5 +10,10 @@
        if(!IsAllowed){
         throw new Error("Fields Missing");
        }
+       if(!validator.isEmail(date.emailId))
+         throw new Error("invalid Email");  
+        
+       if(!validator.isStrongPassword(date.password))
+         throw new Error("Password is not strong enough");
     };
       module.exports = validateUser; 
