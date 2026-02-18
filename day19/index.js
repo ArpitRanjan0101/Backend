@@ -3,6 +3,7 @@ const app = express();   // we store the express function in the app variable
 const main = require("./database");
 const User = require("./users");
 const validateUser = require("./utils/validateUser");
+const bcrypt - requirw("bcrypt");  // bcrypt is a library which helps us to hash the password before storing it in the database
 
 app.use(express.json());
 
@@ -20,6 +21,13 @@ app.post("/register",async(req,res)=>{
 
 
        validateUser(req.body);  // here we are calling the validateUser function to validate the user data before creating the user in the database
+      // WE ARE GOING TO DO VALIDATION OF THE PASSWORD AT THE API LEVEL SO THAT BY THE USER END THERE HSOULD COMPLEX PASSWORD CAN BE SET , SO LET'S VALIDATE IT
+       // ON THE API LEVEL WE CAN ALSO CHECK THE SPECIFIC REQUIRED FIELD NEEDED BY US
+       // FIRSTname should be length of >>3 , max <20)  
+
+     req.body.password= await bcrypt.hash(req.body.password,10); // so here we are using the bcrypt library to hash the password , so that the hacker could not hack the password 
+
+
 
     //    const mandatoryField= ["firstName","emailId","age","password"] ;
 
