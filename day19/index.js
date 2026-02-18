@@ -3,7 +3,7 @@ const app = express();   // we store the express function in the app variable
 const main = require("./database");
 const User = require("./users");
 const validateUser = require("./utils/validateUser");
-const bcrypt - requirw("bcrypt");  // bcrypt is a library which helps us to hash the password before storing it in the database
+const bcrypt = require("bcrypt");  // bcrypt is a library which helps us to hash the password before storing it in the database
 
 app.use(express.json());
 
@@ -27,6 +27,7 @@ app.post("/register",async(req,res)=>{
 
 
        // here below we are converting the password into the hascode using bcrypt libray
+
      req.body.password= await bcrypt.hash(req.body.password,10); // so here we are using the bcrypt library to hash the password , so that the hacker could not hack the password 
 
 

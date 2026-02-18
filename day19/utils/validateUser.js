@@ -1,4 +1,4 @@
-const { default: isEmail } = require("validator/lib/isEmail");
+
 
  const validator = require("validator");
 
