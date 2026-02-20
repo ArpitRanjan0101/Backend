@@ -59,7 +59,7 @@ app.post("/register",async(req,res)=>{
 app.post("/login", async(req , res)=>{
     try{
      // validate karna hai yaha pe
-     const people = await User.findById(req.body._id);
+     const people = await User.findById(req.body._id);  // this actually find the user by id and return the user data in the people variable , if the user is not found then it will return null
      
      if(!(req.body.emailId ===people.emailId))
         throw new Error("Invalid credential");
