@@ -62,19 +62,19 @@ app.post("/register",async(req,res)=>{
 app.post("/login", async(req , res)=>{
     try{
      // validate karna hai yaha pe
-     const people = await User.findById(req.body._id);  // this actually find the user by id and return the user data in the people variable , if the user is not found then it will return null
+     const people = await User.findOne({emailId:req.body.emailId});  // this actually find the user by id and return the user data in the people variable , if the user is not found then it will return null
      
      if(!(req.body.emailId ===people.emailId))
         throw new Error("Invalid credential");
 
- const IsAllowed = await bcrypt.compare(req.body.password ,"$2b$10$ZJ1Fya6nWqXufhhealeGO.LWL7lLwc4.v81IvwKcpeLLdyAz1E/lK");  // here we are comparing the password entered by the user with the hashed password stored in the database using bcrypt library
+ const IsAllowed = await bcrypt.compare(req.body.password ,people.password);  // here we are comparing the password entered by the user with the hashed password stored in the database using bcrypt library
 
     if(!IsAllowed)
         throw new Error("Invalid credential");
 
   // WE are going to do setup here for the JWT token which would be stored in the cookies
    
-const token = jwt.sign({_id:people._id, emailId:people.emailId},"Arpit@12345");
+const token = jwt.sign({_id:people._id, emailId:people.emailId},"Arpit@12345",{expiresIn:"1hr"}); // here we are creating the token using jwt library and the secret key used to sign the token and also we are setting the expiration time for the token 
 
   res.cookie("token",token); 
 
@@ -94,7 +94,7 @@ app.get("/info",async(req ,res)=>{
     try{
 
 // before sending the information we will verify the token from the cookies to check if the user is authenticated or not , if the token is valid then we will send the information otherwise we will send the error message
-        jwt.verify(req.cookies.token,"Arpit@12345"); // here we are verifying the token from the cookies using jwt library and the secret key used to sign the token
+      const payload = jwt.verify(req.cookies.token,"Arpit@12345"); // here we are verifying the token from the cookies using jwt library and the secret key used to sign the token
 
 
         const result = await User.find();  // here we have used the find method of mongoose to get all the users from the database
