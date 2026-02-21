@@ -4,8 +4,11 @@ const main = require("./database");
 const User = require("./users");
 const validateUser = require("./utils/validateUser");
 const bcrypt = require("bcrypt");  // bcrypt is a library which helps us to hash the password before storing it in the database
+const cookieParser = require("cookie-parser"); // cookie parser is a library which helps us to parse the cookies from the request and we can use it in our application
+const jwt = require('jsonwebtoken'); // jsonwebtoken is a library which helps us to create and verify the JWT token for authentication and authorization in our application)
 
 app.use(express.json());
+app.use(cookieParser()); // here we are using the cookie parser middleware to parse the cookies from the request and we can use it in our application
 
 
 // In this api we will create a user and store it in the database , will write in try block while in catch block we will handle the error // donw here
@@ -64,14 +67,14 @@ app.post("/login", async(req , res)=>{
      if(!(req.body.emailId ===people.emailId))
         throw new Error("Invalid credential");
 
- const IsAllowed = await bcrypt.compare(req.body.password ,10);
+ const IsAllowed = await bcrypt.compare(req.body.password ,"$2b$10$ZJ1Fya6nWqXufhhealeGO.LWL7lLwc4.v81IvwKcpeLLdyAz1E/lK");  // here we are comparing the password entered by the user with the hashed password stored in the database using bcrypt library
 
     if(!IsAllowed)
         throw new Error("Invalid credential");
 
   // WE are going to do setup here for the JWT token which would be stored in the cookies
    
-  res.cookie("token","iwegfriwgfwygfifgfgwsifgfi"); 
+  res.cookie("token","ahgfkfhsdfh34ghg5vbs6bkb7bk8bkb8bkb3"); 
 
     res.send("Login successfully");
 
@@ -89,6 +92,8 @@ app.get("/info",async(req ,res)=>{
     try{
         const result = await User.find();  // here we have used the find method of mongoose to get all the users from the database
         // and also we have used here await function since the information will not appear instantly it will take some time to fetch the data from the database
+       
+       console.log(req.cookies); // here we are logging the cookies from the request to check if the token is being stored in the cookies or not
         res.send(result);
     
     }
