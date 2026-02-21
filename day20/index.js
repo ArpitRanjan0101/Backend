@@ -74,7 +74,9 @@ app.post("/login", async(req , res)=>{
 
   // WE are going to do setup here for the JWT token which would be stored in the cookies
    
-  res.cookie("token","ahgfkfhsdfh34ghg5vbs6bkb7bk8bkb8bkb3"); 
+const token = jwt.sign({_id:people._id, emailId:people.emailId},"Arpit@12345");
+
+  res.cookie("token",token); 
 
     res.send("Login successfully");
 
@@ -90,6 +92,11 @@ app.post("/login", async(req , res)=>{
 
 app.get("/info",async(req ,res)=>{
     try{
+
+// before sending the information we will verify the token from the cookies to check if the user is authenticated or not , if the token is valid then we will send the information otherwise we will send the error message
+        jwt.verify(req.cookies.token,"Arpit@12345"); // here we are verifying the token from the cookies using jwt library and the secret key used to sign the token
+
+
         const result = await User.find();  // here we have used the find method of mongoose to get all the users from the database
         // and also we have used here await function since the information will not appear instantly it will take some time to fetch the data from the database
        
