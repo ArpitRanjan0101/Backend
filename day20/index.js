@@ -173,3 +173,5 @@ main()
 
 
 // we face an error here , that we unable to connect with the db becoz we could not install the mongoose package
+
+// done with the JWT token and cookie parser and bcrypt library for hashing the password and validating the user data before creating the user in the database and also we have created the login api to login with the email and password and we have also created the api to get all the users from the database and also we have created the api to get the user by id and also we have created the api to delete the user by id and also we have created the api to update the user by id
