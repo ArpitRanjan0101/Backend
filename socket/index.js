@@ -7,6 +7,23 @@ const server = http.createServer(app);
 
 const io = new Server(server); // here we are creating a socket server by passing the http server to the Server class  , simply yaha yeah meaning hai ki , jab normal request ati hai to usse server level pe handle kro , but jaise hi koi websocket connection request aati hai to ussee socket server level pe handle kro using socket.io library , by putting it into the io variable
 
+
+io.on("connection",(socket)=>{
+    socket.on('message',(data)=>{
+        io.emit("new-message",data);
+    })
+
+    socket.on("disconnect",()=>{
+        console.log("Disconnected from the server");
+    })
+})
+
+
+
+
+
+
+
 server.listen(3000 ,()=>{
   console.log("Listening on port 3000");
 })
