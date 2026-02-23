@@ -174,5 +174,5 @@ main()
 
 // we face an error here , that we unable to connect with the db becoz we could not install the mongoose package
 
-
+// we have finished here , the JWT part completely , now moving ahead for the Websocket and Socket.io
 // Going ahead for the validation of the user data before creating the user in the database , we will create a function in the utils folder and we will call that function in the register api to validate the user data before creating the user in the database
