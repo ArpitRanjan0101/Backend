@@ -11,7 +11,7 @@ else if(req.url==="/contact"){
     res.end("Hello ji, welcome to our contact page");
 }
 else if(req.url==="/about"){
-    res.end("Hello ji, welcome to our about page");
+    res.end("Hello ji, welcome to our about page"); // if else statement ke through hum routing kar rahe hai , jab bhi koi request aayegi to uske url ke hisab se response dega
 }
 else {
     res.end("404 page not found");
